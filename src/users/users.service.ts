@@ -30,7 +30,6 @@ export class UsersService {
 
   async update(id: number, attrs: User) {
     const user = await this.findOne(id);
-
     if (!user) {
       throw new Error('User not found');
     }

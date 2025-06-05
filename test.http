@@ -9,3 +9,11 @@ content-type: application/json
     "email": "test@test.com",
     "password": "admin123"
 }
+
+### find one
+
+GET http://localhost:3005/auth/2
+
+### find all
+
+GET http://localhost:3005/auth?email=test@test.com
