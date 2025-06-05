@@ -24,10 +24,34 @@ DELETE http://localhost:3005/auth/1
 
 ### update user
 
-PATCH http://localhost:3005/auth/2
+PATCH http://localhost:3005/auth/2 
 content-type: application/json
 
 {
     "email": "te_ffst@testupdated.com",
     "password": "admin123_updated"
+}
+
+### update user BAD REQUEST
+
+PATCH http://localhost:3005/auth/233333
+content-type: application/json
+
+{
+    "email": "test@testmodified.com",
+    "password": "admin123_modified"
+}
+
+### Find user  BAD REQUEST
+
+GET http://localhost:3005/auth/14444
+
+### update user  BAD REQUEST
+
+PATCH http://localhost:3005/auth/222 
+
+content-type: application/json
+{
+    "email": "test@testmodified.com",
+    "password" : "admin123_modified"
 }
