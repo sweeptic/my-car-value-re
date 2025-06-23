@@ -20,7 +20,7 @@ GET http://localhost:3005/auth?email=test@test.com
 
 ### delete user by id
 
-DELETE http://localhost:3005/auth/1
+DELETE http://localhost:3005/auth/4
 
 ### update user
 
@@ -34,7 +34,7 @@ content-type: application/json
 
 ### update user BAD REQUEST
 
-PATCH http://localhost:3005/auth/233333
+PATCH http://localhost:3005/auth/5
 content-type: application/json
 
 {
@@ -44,7 +44,7 @@ content-type: application/json
 
 ### Find user  BAD REQUEST
 
-GET http://localhost:3005/auth/14444
+GET http://localhost:3005/auth/3
 
 ### update user  BAD REQUEST
 
