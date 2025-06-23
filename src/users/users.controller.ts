@@ -15,6 +15,7 @@ import { UpdateUserDto } from './dtos/update-user';
 import { Serialize } from 'src/interceptors/serialize.interceptors';
 import { UserDto } from './dtos/user.dto';
 
+@Serialize(UserDto)
 @Controller('auth')
 export class UsersController {
   constructor(private usersService: UsersService) {}
@@ -28,7 +29,6 @@ export class UsersController {
 
   // GET http://localhost:3000/auth/1
   //   @UseInterceptors(new SerializeInterceptor(UserDto))
-  @Serialize(UserDto)
   @Get('/:id')
   async findUser(@Param('id') id: string) {
     const user = await this.usersService.findOne(parseInt(id));

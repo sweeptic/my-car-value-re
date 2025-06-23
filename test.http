@@ -48,7 +48,7 @@ GET http://localhost:3005/auth/3
 
 ### update user  BAD REQUEST
 
-PATCH http://localhost:3005/auth/222 
+PATCH http://localhost:3005/auth/2 
 
 content-type: application/json
 {
