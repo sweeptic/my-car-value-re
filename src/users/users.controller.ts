@@ -30,6 +30,11 @@ export class UsersController {
     session.color = color;
   }
 
+  @Get('/whoami')
+  whoAmI(@Session() session: any) {
+    return this.usersService.findOne(session.userId);
+  }
+
   @Get('/colors')
   getColor(@Session() session: any) {
     return session.color;
@@ -37,10 +42,12 @@ export class UsersController {
 
   //
   //
+
   @Post('/signup')
-  createUser(@Body() body: CreateUserDto) {
-    // this.usersService.create(body.email, body.password);
-    return this.authService.signup(body.email, body.password);
+  async createUser(@Body() body: CreateUserDto, @Session() session: any) {
+    const user = await this.authService.signup(body.email, body.password);
+    session.userId = user.id;
+    return user;
   }
 
   @Post('/signin')

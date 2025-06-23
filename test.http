@@ -73,3 +73,17 @@ GET http://localhost:3005/auth/colors/red
 ### get the color
 
 GET http://localhost:3005/auth/colors
+
+### sign up
+
+POST http://localhost:3005/auth/signup 
+content-type: application/json
+
+{
+    "email": "test1111@test.com",
+    "password": "admin123"
+}
+
+### Find user who am i
+
+GET http://localhost:3005/auth/whoami
