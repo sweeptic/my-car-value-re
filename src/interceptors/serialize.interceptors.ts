@@ -8,6 +8,7 @@ import { plainToClass } from 'class-transformer';
 
 import { map, Observable } from 'rxjs';
 
+// must be a class
 interface ClassConstructor {
   new (...args: any[]): {};
 }
