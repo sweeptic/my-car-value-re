@@ -1,14 +1,19 @@
 import { UsersService } from '../users.service';
-import { CallHandler, ExecutionContext, NestInterceptor } from '@nestjs/common';
+import {
+    CallHandler,
+    ExecutionContext,
+    Injectable,
+    NestInterceptor,
+} from '@nestjs/common';
 
+@Injectable()
 export class CurrentUserInterceptor implements NestInterceptor {
   constructor(private UsersService: UsersService) {}
 
   async intercept(context: ExecutionContext, handler: CallHandler) {
-    console.log('intercept');
-
     const request = context.switchToHttp().getRequest();
     const { userId } = request.session;
+    console.log('intercept', userId);
 
     if (userId) {
       const user = await this.UsersService.findOne(userId);
