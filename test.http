@@ -34,7 +34,7 @@ content-type: application/json
 
 ### update user BAD REQUEST
 
-PATCH http://localhost:3005/auth/5
+PATCH http://localhost:3005/auth/5 
 content-type: application/json
 
 {
@@ -49,9 +49,19 @@ GET http://localhost:3005/auth/3
 ### update user  BAD REQUEST
 
 PATCH http://localhost:3005/auth/2 
-
 content-type: application/json
+
 {
     "email": "test@testmodified.com",
-    "password" : "admin123_modified"
+    "password": "admin123_modified"
+}
+
+### sign in
+
+POST http://localhost:3005/auth/signin 
+content-type: application/json
+
+{
+    "email": "test02@test.com",
+    "password": "admin123"
 }
