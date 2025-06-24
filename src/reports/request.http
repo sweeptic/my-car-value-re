@@ -11,6 +11,15 @@ content-type: application/json
     "price": 25000
 }
 
+### approve an existing report
+
+PATCH http://localhost:3005/reports/1
+content-type: application/json
+
+{
+    "approved": true
+}
+
 ### sign out
 
 POST http://localhost:3005/auth/signout
