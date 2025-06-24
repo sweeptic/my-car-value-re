@@ -1,0 +1,26 @@
+POST http://localhost:3005/reports 
+content-type: application/json
+
+{
+    "make": "mercedes",
+    "model": "w200",
+    "year": 1982,
+    "mileage": 114000,
+    "lng": 0,
+    "lat": 0,
+    "price": 25000
+}
+
+### sign out
+
+POST http://localhost:3005/auth/signout
+
+### sign in
+
+POST http://localhost:3005/auth/signin 
+content-type: application/json
+
+{
+    "email": "test1111@test.com",
+    "password": "admin123"
+}
