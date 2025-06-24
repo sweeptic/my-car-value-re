@@ -13,7 +13,7 @@ content-type: application/json
 
 ### approve an existing report
 
-PATCH http://localhost:3005/reports/1
+PATCH http://localhost:3005/reports/1 
 content-type: application/json
 
 {
@@ -33,3 +33,15 @@ content-type: application/json
     "email": "test1111@test.com",
     "password": "admin123"
 }
+
+### sign in admin
+
+POST http://localhost:3005/auth/signin 
+content-type: application/json
+
+{
+    "email": "admin@admin.com",
+    "password": "admin123"
+}
+
+
